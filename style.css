@@ -1,0 +1,134 @@
+/* Streamlined Minimalist CSS for Smart Shopping Cart Guard */
+
+/* Custom Clean Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.6);
+}
+
+/* Image preview interactivity */
+#preview-image {
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+#preview-image:hover {
+  opacity: 0.95;
+}
+
+/* Elegant OCR Pinpoint & Bounding Box System */
+.ocr-box {
+  position: absolute;
+  border: 1.5px dashed #10b981;
+  background-color: rgba(16, 185, 129, 0.05);
+  border-radius: 6px;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(0px);
+}
+
+.ocr-box:hover {
+  background-color: rgba(16, 185, 129, 0.12);
+  border-style: solid;
+  border-color: #059669;
+  z-index: 30;
+}
+
+.ocr-box.trick-danger {
+  border-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.06);
+}
+
+.ocr-box.trick-danger:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+  border-style: solid;
+}
+
+.ocr-box.trick-warning {
+  border-color: #f59e0b;
+  background-color: rgba(245, 158, 11, 0.06);
+}
+
+.ocr-box.trick-warning:hover {
+  background-color: rgba(245, 158, 11, 0.15);
+  border-style: solid;
+}
+
+/* Compact Floating Pill Tag - Positioned inside or neatly at edge without overlapping text */
+.ocr-box .ocr-tag {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(4px);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1.5px 6px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  pointer-events: none;
+}
+
+.ocr-box.trick-danger .ocr-tag {
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.5);
+  background: rgba(127, 29, 29, 0.85);
+}
+
+.ocr-box.trick-warning .ocr-tag {
+  color: #fde68a;
+  border-color: rgba(245, 158, 11, 0.5);
+  background: rgba(120, 53, 15, 0.85);
+}
+
+/* Laser scan line */
+@keyframes scan {
+  0%, 100% { top: 0%; }
+  50% { top: 95%; }
+}
+
+.animate-scan {
+  animation: scan 2s ease-in-out infinite;
+}
+
+/* Checklist items */
+.checklist-row:has(input:checked) {
+  background-color: rgba(16, 185, 129, 0.08);
+}
+
+.checklist-row:has(input:checked) span {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+/* Toast animation */
+@keyframes toastSlide {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.toast-in {
+  animation: toastSlide 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
